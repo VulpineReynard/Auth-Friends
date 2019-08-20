@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { axiosWithAuth } from '../Utilities/axiosWithAuth';
 
 const NewFriendForm = ({ friendsList, setFriendsList }) => {
@@ -71,6 +70,7 @@ const NewFriendForm = ({ friendsList, setFriendsList }) => {
         />
 
         <button>Submit</button>
+        <button onClick={(e) => {e.preventDefault(); toggleIsAddingNewFriend(!isAddingNewFriend)}}>Go Back</button>
       </form>
     );
   } else {

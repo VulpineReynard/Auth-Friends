@@ -11,11 +11,12 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Link to="/login" className="login-btn">Login</Link>
+          <Link onClick={() => localStorage.clear()} to="/login" className="logout-btn">Logout</Link>
           <img src={logo} className="App-logo" alt="logo" />
           <Link to="/protected" className="friends-btn">Friends</Link>
         </header>
         <Route path="/login" component={LoginForm}/>
-        <PrivateRoute exact path="/protected" component={FriendsList}/>
+        <PrivateRoute path="/protected" component={FriendsList}/>
       </div>
     </Router>
   );

@@ -37,6 +37,17 @@ const Friend = ({ friend, setFriendsList }) => {
     }
   }
 
+  const deleteFriend = (id) => {
+    axiosWithAuth().delete(`http://localhost:5000/api/friends/${id}`)
+      .then(res => {
+        console.log(res);
+        setFriendsList(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+
   return (
   <div className="friend-container">
     {isEditing === true ? (
@@ -72,7 +83,9 @@ const Friend = ({ friend, setFriendsList }) => {
     <p>{friend.name || null}</p>,
     <p>{friend.age || null}</p>,
     <p>{friend.email || null}</p>,
-    <button onClick={(e) => setIsEditing(!isEditing)}>Edit Friend</button>
+    <button onClick={(e) => setIsEditing(!isEditing)}>Edit Friend</button>,
+    <br></br>,
+    <button onClick={(e) => deleteFriend(friend.id)}>Delete Friend</button>
     ]
     )}
   </div>

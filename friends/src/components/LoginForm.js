@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 const LoginForm = () => {
@@ -21,6 +22,7 @@ const LoginForm = () => {
       .then(res => {
         console.log(res);
         localStorage.setItem('token', res.data.payload);
+        return <Redirect to="/protected"/>
       })
       .catch(err => {
         console.log(err);
