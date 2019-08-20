@@ -1,0 +1,32 @@
+.friend-container {
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgb(156, 156, 156);
+  margin: 10px 0;
+
+  input {
+    margin: 10px auto;
+  }
+  input:first-child {
+    margin-top: 25px;
+  }
+  button {
+    margin: 5px auto;
+    width: 50%;
+    padding: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: rgb(82, 82, 82);
+    border-radius: 5px;
+    transition: all .3s;
+
+    &:hover {
+      background: rgb(99, 99, 99);
+    }
+    &:active {
+      transform: translateY(3px);
+    }
+  }
+}

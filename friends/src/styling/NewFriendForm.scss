@@ -1,0 +1,35 @@
+.new-friend-form {
+  height: 220px;
+  width: 700px;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  input {
+    width: 50%;
+    margin: 5px auto;
+    outline: none;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    text-align: center;
+  }
+
+  button {
+    width: 10%;
+    margin: 5px auto;
+    outline: none;
+    border: 1px solid rgb(180, 180, 180);
+    cursor: pointer;
+    background: rgb(235, 235, 235);
+    transition: all .3s;
+    padding: 5px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.05) translateY(3px);
+    }
+  }
+}
