@@ -1,6 +1,11 @@
 @import './App.scss';
+@import './LoginForm.scss';
+@import './FriendsList.scss';
+@import './Friend.scss';
+@import './NewFriendForm.scss';
 
 body {
+  height: 100vh;
   margin: 0;
   font-family: 'Barlow Semi Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;

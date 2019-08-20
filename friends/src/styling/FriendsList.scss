@@ -1,0 +1,25 @@
+.friends-view {
+  height: 100vh;
+  width: 75%;
+  margin: auto;
+  text-align: center;
+
+  .friends-container {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    h2 {
+      position: absolute;
+      top: 35%;
+    }
+  }
+
+  .add-friend-btn {
+    margin: 100px auto;
+
+  }
+}
