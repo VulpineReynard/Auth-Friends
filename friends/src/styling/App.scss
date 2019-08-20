@@ -17,16 +17,17 @@
     transform: rotate(360deg);
   }
 }
-
-.login-btn {
-  text-align: center;
+.login-logout-container {
   align-self: center;
+}
+.login-btn {
   color: white;
   text-decoration: none;
   padding: 10px;
   font-size: 1.5rem;
   transition: all .3s;
   border-radius: 5px;
+  margin-right: 30px;
 
   &:hover {
     background: rgba(255, 255, 255, 0.144);
@@ -46,6 +47,10 @@
     background: rgba(255, 255, 255, 0.144);
   }
 }
+
+.nav-container {
+  align-self: center;
+}
 .friends-btn {
   text-align: center;
   align-self: center;
@@ -55,7 +60,21 @@
   font-size: 1.5rem;
   transition: all .3s;
   border-radius: 5px;
+  margin-right: 30px;
 
+  &:hover {
+    background: rgba(255, 255, 255, 0.144);
+  }
+}
+.wip-btn {
+  text-align: center;
+  align-self: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  transition: all .3s;
+  border-radius: 5px;
   &:hover {
     background: rgba(255, 255, 255, 0.144);
   }

@@ -11,6 +11,7 @@ const Friend = ({ friend, setFriendsList }) => {
   });
 
   const submitUpdatedFriend = (id) => {
+    if(updatedFriend.name === '') {alert('Name cannot be empty'); return true;}
     axiosWithAuth().put(`http://localhost:5000/api/friends/${id}`, updatedFriend)
       .then(res => {
         console.log(res);
@@ -53,6 +54,7 @@ const Friend = ({ friend, setFriendsList }) => {
     {isEditing === true ? (
     [
     <input 
+    key={1}
     onChange={(e) => handleChanges(e)}
     value={updatedFriend.name}
     type="text"
@@ -61,6 +63,7 @@ const Friend = ({ friend, setFriendsList }) => {
     />,
 
     <input 
+    key={2}
     onChange={(e) => handleChanges(e)}
     value={updatedFriend.age}
     placeholder="age"
@@ -69,6 +72,7 @@ const Friend = ({ friend, setFriendsList }) => {
     />,
 
     <input 
+    key={3}
     onChange={(e) => handleChanges(e)}
     value={updatedFriend.email}
     type="email"
@@ -76,16 +80,16 @@ const Friend = ({ friend, setFriendsList }) => {
     name="email"
     />,
 
-    <button onClick={() => submitUpdatedFriend(friend.id)}>Submit</button>
+    <button key={4} onClick={() => submitUpdatedFriend(friend.id)}>Submit</button>
     ]
     ) : (
     [
-    <p>{friend.name || null}</p>,
-    <p>{friend.age || null}</p>,
-    <p>{friend.email || null}</p>,
-    <button onClick={(e) => setIsEditing(!isEditing)}>Edit Friend</button>,
-    <br></br>,
-    <button onClick={(e) => deleteFriend(friend.id)}>Delete Friend</button>
+    <p key={1}>{friend.name || null}</p>,
+    <p key={2}>{friend.age || null}</p>,
+    <p key={3}>{friend.email || null}</p>,
+    <button key={4} onClick={(e) => setIsEditing(!isEditing)}>Edit Friend</button>,
+    <br key={5}></br>,
+    <button key={6} onClick={(e) => deleteFriend(friend.id)}>Delete Friend</button>
     ]
     )}
   </div>

@@ -7,6 +7,9 @@
   input {
     margin: 10px auto;
   }
+  input:first-child {
+    margin-top: 25px;
+  }
   button {
     margin: 5px auto;
     width: 50%;

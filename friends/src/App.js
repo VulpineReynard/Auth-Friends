@@ -10,10 +10,15 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <Link to="/login" className="login-btn">Login</Link>
-          <Link onClick={() => localStorage.clear()} to="/login" className="logout-btn">Logout</Link>
+          <div className="login-logout-container">
+            <Link to="/login" className="login-btn">Login</Link>
+            <Link onClick={() => localStorage.clear()} to="/login" className="logout-btn">Logout</Link>
+          </div>
           <img src={logo} className="App-logo" alt="logo" />
-          <Link to="/protected" className="friends-btn">Friends</Link>
+          <div className="nav-container">
+            <Link to="/protected" className="friends-btn">Friends</Link>
+            <Link to="/protected"className="wip-btn">WIP</Link>
+          </div>
         </header>
         <Route path="/login" component={LoginForm}/>
         <PrivateRoute path="/protected" component={FriendsList}/>

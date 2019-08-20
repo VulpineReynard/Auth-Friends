@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   const [loginCredentials, setLoginCredentials] = useState({
     username: '',
     password: ''
@@ -22,7 +22,7 @@ const LoginForm = () => {
       .then(res => {
         console.log(res);
         localStorage.setItem('token', res.data.payload);
-        return <Redirect to="/protected"/>
+        props.history.push('/protected')
       })
       .catch(err => {
         console.log(err);
@@ -31,12 +31,13 @@ const LoginForm = () => {
   }
 
   return (
-    <form className="login-form">
+    <form onSubmit={(e) => login(e)} className="login-form">
       <input 
       onChange={(e) => handleChanges(e)} 
       placeholder="Username" 
       name="username"
       value={loginCredentials.username}
+      required
       />
 
       <input 
@@ -44,9 +45,10 @@ const LoginForm = () => {
       placeholder="Password" 
       name="password"
       value={loginCredentials.password}
+      required
       />
 
-      <button onClick={(e) => login(e)}>Submit</button>
+      <button>Submit</button>
     </form>
   );
 }

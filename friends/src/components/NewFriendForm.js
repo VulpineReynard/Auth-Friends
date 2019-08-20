@@ -31,6 +31,10 @@ const NewFriendForm = ({ friendsList, setFriendsList }) => {
         console.log(res);
         toggleIsAddingNewFriend(!isAddingNewFriend);
         setFriendsList(res.data);
+        setNewFriend({
+          name: '',
+          email: ''
+        });
       })
       .catch(err => {
         console.log(err);
